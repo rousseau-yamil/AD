@@ -1,0 +1,17 @@
+Enumeracion
+PS> Get-NetIPConfiguration -InterfaceAlias 
+
+ping / 
+PS> Test-NetConnection <ip>
+
+nslookup / Resolv DNS
+Resolve-DnsName www.google.com
+
+Name                                           Type   TTL   Section    IPAddress
+----                                           ----   ---   -------    ---------
+www.google.com                                 AAAA   187   Answer     2800:3f0:4002:807::2004
+www.google.com                                 A      187   Answer     172.217.173.164
+
+
+Tracert /
+PS> Test-NetConnection 8.8.4.4 -TraceRoute
