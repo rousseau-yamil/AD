@@ -1,4 +1,4 @@
-Enumeracion
+#Enumeracion
 PS> Get-NetIPConfiguration -InterfaceAlias 
 
 ping / 
@@ -15,3 +15,15 @@ www.google.com                                 A      187   Answer     172.217.1
 
 Tracert /
 PS> Test-NetConnection 8.8.4.4 -TraceRoute
+
+#Buscar archivos
+
+Get-ChildItem -Include *.doc,*.docx -File -Recurse -ErrorAction SilentlyContinue
+-Recurse - de forma recursiva
+-SilentlyContinue  - no mostrar error
+
+
+Get-ChildItem -Recurse | Where {$_.Name -match 'Tareas'} | Select Fullname
+
+#Filtrar tipo de archivo
+Get-ChildItem -Filter *.txt -Recurse
