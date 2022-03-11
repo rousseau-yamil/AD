@@ -27,3 +27,8 @@ Get-ChildItem -Recurse | Where {$_.Name -match 'Tareas'} | Select Fullname
 
 #Filtrar tipo de archivo
 Get-ChildItem -Filter *.txt -Recurse
+
+
+Crear Usuarios Masivamente AD
+Import-Csv <path> | ForEach-Object { New-QADUser -name $_.Name -Firstname $_.Firstname -LastName $_.Lastname -Office $_.Office -Title $_.Title -Description $_.Description -Departament $_.Department -Company $_.Company -City $_.City -StateOrProvince $_.State -UserPassword $_.UserPassword -SamAccountName $_.SamAccountName -UserPrincipalName $_.UserPrincipalName -DisplayName $_.DisplayName -ParentContainer $_.ParentContainer }
+*Propiedades deben Coincidir con columnas del .csv (en Dominio   .local / Usuarios / Gpertenec / Propiedades / Editor de atributos
